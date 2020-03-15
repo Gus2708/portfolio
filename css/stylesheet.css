@@ -353,12 +353,28 @@ footer .redes-sociales .container{
     padding: 20px 0;
 }
 
+@media screen and (max-width: 517px){
+
+    header .contenedor-texto .texto{
+        border: 2px solid #f4f4f880;
+        display: inline-block;
+        text-align: center;
+        padding: 20px 40px;
+    
+    }
+
+}
+
 @media screen and (max-width:370px){
     header .menu{text-align: center;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     }
+
+    header .menu a{
+        margin: 0 10px;
+        }
     
     header .contenedor-texto{
         display: flex;
@@ -372,7 +388,7 @@ footer .redes-sociales .container{
         border: 2px solid #f4f4f880;
         display: inline-block;
         text-align: center;
-        padding: 0px 60px;
+        padding: 10px 20px;
     
     }
 
