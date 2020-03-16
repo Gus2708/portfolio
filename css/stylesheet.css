@@ -6,6 +6,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     background: #fff;
     font-size: 16px;
+    transition: all .3s ease;
 }
 
 .container{
@@ -14,6 +15,41 @@ body{
     margin: auto;
     overflow: hidden;
 }
+
+/* boton ir arriba*/
+.ir-arriba {
+    display:none;
+	background: linear-gradient(45deg, #7353ba 0%, #009fb7 38%, #2BFF88 97%);
+	font-size: 15px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+    right:20px;
+    border-radius: 50%;
+    box-shadow: -1px 2px 7px #2d31427c;
+}
+
+.ir-arriba .fa-chevron-up{
+    padding:15px 15px;
+}
+
+.ir-arriba .fa-chevron-up:hover{
+    animation: bajar-subir .6s ease infinite;
+
+}
+
+    @keyframes bajar-subir{
+        0%{transform: translateY(0px);}
+        15%{transform: translateY(-2.5px);}
+        30%{transform: translateY(-5px);}
+        45%{transform: translateY(-2.5px);}
+        60%{transform: translateY(0px);}
+        75%{transform: translateY(2.5px);}
+        85%{transform: translateY(5px);}
+        95%{transform: translateY(2.5px);}
+        100%{transform: translateY(0px);}
+    }
 
 /* Header */
 
@@ -24,12 +60,13 @@ header{
     background-attachment: fixed;
     background-size: 600% 100%;
     max-height: 600px;
-    animation: gradient 30s linear infinite;
+    animation: gradient 35s linear infinite;
     animation-direction: alternate;
     border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 @keyframes gradient {
     0% {background-position: 0%}
+    50%{background-position: 50%;}
     100% {background-position: 100%}
 }
 
@@ -51,6 +88,7 @@ header .menu a{
 header .menu a:hover{
     border-bottom: 2px solid #f4f4f8;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 header .contenedor-texto{
@@ -96,6 +134,12 @@ header .contenedor-texto .texto .profesion{
 .main{
     text-align: center;
     border-top: 5px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+.main .acerca-de .container{
+    display: flex;
+    justify-content: center;
 }
 
 .main .container{
@@ -119,7 +163,7 @@ border: 5px solid rgba(0, 0, 0, 0.1);
     font-size: 1em;
     line-height: 30px;
     width: 80%;
-    margin: 40px auto 60px auto;
+    margin: 40px auto -18px auto;
 
 }
 
@@ -136,14 +180,80 @@ border: 5px solid rgba(0, 0, 0, 0.1);
     text-decoration: underline;
 }
 
+.main .acerca-de .texto p{
+    margin-bottom: 40px;
+}
+
+
+.main .acerca-de .card-header{
+    
+    padding-left: 12px;
+    padding-top: 17px;
+    margin: 0 45%; 
+    z-index: 1;
+    align-items: flex-end;
+    font-size: 20px;
+    width: 50px; 
+     height: 50px; 
+     border-radius: 7px;
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+     background: #fff;
+}
+
+
+
+.main .acerca-de .card-header .collapsed .fa-chevron-down{
+    color: #7353ba;
+    z-index: 2;
+    align-self: flex-end;
+    transform: rotate(-45deg);
+}
+
+.main .acerca-de .card-header .fa-chevron-down{
+    color: #7353ba;
+    z-index: 2;
+    align-self: flex-end;
+    transform: rotate(135deg);
+    transition: all .3s ease;
+}
+
+.main .acerca-de .card-body {
+display: flex;
+margin: 20px 0 40px 0;
+
+}
+
+
+.main .acerca-de .card-body .articulo {
+    background: #f4f4f8;
+    padding: 0 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 16px;
+    width: 100%;
+ }
+
+ .main .acerca-de .card-body .articulo:nth-child(1){
+     margin-right: 20px;
+ }
+ .main .acerca-de .card-body .articulo:nth-child(2){
+     margin-left: 20px;
+ }
+
 .main .trabajos{
     background: #f4f4f8;
     padding: 60px 0;
+    z-index: 0;
 }
 
 .main .trabajos .container{
     overflow: hidden;
 }
+
 
 .main .trabajos .titulo{
     font-size: 34px;
@@ -158,6 +268,7 @@ border: 5px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: space-between;
     justify-content: space-between;
 }
 
@@ -186,6 +297,7 @@ border: 5px solid rgba(0, 0, 0, 0.1);
 
 .main .trabajos .contenedor-trabajos .trabajo .descripcion{
     text-align: center;
+    margin-top: 20px;
 }
 
 .main .trabajos .contenedor-trabajos .trabajo .descripcion .nombre{
@@ -335,6 +447,11 @@ footer .redes-sociales .fa-github:hover{
     header .menu{text-align: center;}
 }
 
+.main .acerca-de .card-header{
+    margin: 0 46.3%; 
+    
+}
+
 .main .trabajos .contenedor-trabajos .trabajo{
     width: 46%;
 }
@@ -343,6 +460,35 @@ footer .redes-sociales .fa-github:hover{
     header .contenedor-texto .text .nombre{
         font-size: 35px;
     }
+
+    .main .acerca-de .card-header{
+        margin: 0 44%; 
+        
+    }
+
+    .main .container .acordeon{
+        margin: 0;
+    }
+
+    .main .acerca-de .card-body {
+        display: block;
+        padding: 20px 0;
+        margin: 20px -40px 40px -40px;
+        
+        }
+    
+    .marin .acerca-de .card-body .articulo{
+        font-size: 12px;
+        text-align: left;
+        line-height: 12px;
+        padding: 0 10px;
+        margin: 0 30px 0 30px;
+    }
+
+    .main .acerca-de .card-body .articulo:nth-child(2) {
+        margin-left: 0;
+    }
+
     header .contenedor-texto .text .nombre{
         font-size: 18px;
     }
@@ -383,6 +529,12 @@ footer .redes-sociales .container{
         align-content: center;
         
     }
+
+    .main .acerca-de .card-header{
+        margin: 0 40%; 
+        
+    }
+
 
     header .contenedor-texto .texto{
         border: 2px solid #f4f4f880;
