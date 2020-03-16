@@ -7,16 +7,18 @@
     <script src="https://kit.fontawesome.com/b29241af52.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <title>Portafolio de Gustavo Reyes</title>
 </head>
 <body>
+    <span class="ir-arriba icon-arrow-up2"><i class="fas fa-chevron-up"></i></span>
     <header>
         <div class="container">
-                <nav class="menu">
-                    <a href="#">Acerca de</a>
-                    <a href="#">Trabajos</a>
-                    <a href="#">Contacto</a>
+            <nav class="menu">
+                    <a class="ancla" data-ancla="acerca-de">Acerca de</a>
+                    <a class="ancla" data-ancla="trabajos">Trabajos</a>
+                    <a class="ancla" data-ancla="contacto">Contacto</a>
                 </nav>
         <div class="contenedor-texto">
             <div class="texto">
@@ -29,15 +31,34 @@
     </header>
     <section class="main">
         <div class="container">
-            <section class="acerca-de">
+            <section id="acerca-de" class="acerca-de">
                 <div class="foto"><img src="img/me.jpg" width="115" height="115" alt="Gustavo"></div>
                 <div class="texto">
                     <h3 class="titulo">Acerca de</h3>
                     <p>Lorem, ipsum dolor sit amet <span class="bold"> consectetur adipisicing elit.</span> Totam, provident unde? Hic veniam ipsam ducimus? Praesentium, <span class="bold"> quia aliquid nemo quos iste vitae doloremque voluptatum a.</span></p>
+                
+                <div id="acordeon">
+                    <div class="card-header">
+                        <a href="#more" class="card-link collapsed" data-toggle="collapse" data-parent="#acordeon"><i class="fa fa-chevron-down"></i></a>
+                    </div>
+                    <div id="more" class="collapse">
+                        <div id="card" class="card-body">
+                            <article class="articulo estudio">
+                                <h3 class="titulo">Estudios</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod sunt error nobis delectus voluptatibus. Dignissimos doloribus, soluta, voluptas eum rerum quas velit, molestiae numquam eos dolor molestias. Aliquid, officia sequi?</p>
+                             </article>
+                             <article class="articulo sobre-mi">
+                                 <h3 class="titulo">Sobre Mi:</h3>
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet provident saepe obcaecati minus, aliquid magni dolore asperiores aut pariatur ea quaerat enim explicabo praesentium tenetur quam voluptate tempore laboriosam doloremque.</p>
+                             </article>
+                        </div>  
+                    </div>
                 </div>
+            </div>
+                
             </section>
         </div>
-    <section class="trabajos">
+        <section id="trabajos" class="trabajos">
         <div class="container">
             <h3 class="titulo">Trabajos</h3>
             <div class="contenedor-trabajos">
@@ -62,7 +83,7 @@
                 <div class="trabajo">
                     <div class="thumb">
                         <img src="img/3.jpg" width="500" alt="Lorem Ipsum">
-                    <div class="descripcion">
+                        <div class="descripcion">
                         <p class="nombre">Lorem Ipsum</p>
                         <p class="categoria">HTML - CSS - PHP</p>
                     </div>
@@ -71,9 +92,9 @@
                 <div class="trabajo">
                     <div class="thumb">
                         <img src="img/4.jpg"  alt="Lorem Ipsum">
-                    <div class="descripcion">
-                        <p class="nombre">Lorem Ipsum</p>
-                        <p class="categoria">HTML - CSS - PHP</p>
+                        <div class="descripcion">
+                            <p class="nombre">Lorem Ipsum</p>
+                            <p class="categoria">HTML - CSS - PHP</p>
                     </div>
                     </div>
                 </div>
@@ -120,7 +141,7 @@
     </section>
 
     <footer>
-        <section class="contacto">
+        <section id="contacto" class="contacto">
             <div class="container">
                 <h3 class="titulo">Contacto</h3>
                     <form action="" class="form">
@@ -139,6 +160,8 @@
             </div>
         </section>
     </footer>
-    
 </body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
 </html>
