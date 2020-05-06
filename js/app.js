@@ -1,3 +1,43 @@
+$(document).ready(function(){
+
+  $('.menu a').each(function(index, elemento){
+    $(this).css({
+        'opacity': '0'
+    });
+    $(this).animate({'opacity': '1'}, 2500 + (index * 500));
+    });
+
+    if( $(window).width()> 800 ){
+      $('header .contenedor-texto .texto').css({
+          opacity: '0',
+          left: '-100px'
+      });
+
+      $('header .contenedor-texto .texto').animate({
+          opacity: '1',
+          left: '0'
+      }, 1999, function(){
+        
+      } );
+
+
+
+      $('header .contenedor-texto .texto h1, h2').each(function(){
+        $(this).css({
+          left: '-80px',
+          opacity: '0'
+        });
+
+        $(this).animate({
+          left: '-10px',
+          opacity: '1'
+        }, 2999);
+
+
+      });
+
+  };
+
 $('.ancla').on('click', function(e){
   e.preventDefault();
   var strAncla = '#' + $(this).data('ancla');
@@ -15,10 +55,15 @@ $('.ancla').on('click', function(e){
    
     $(window).scroll(function(){
       if( $(this).scrollTop() > 0 ){
-        $('.ir-arriba').slideDown(300);
+        $('.ir-arriba').fadeIn(300);
       } else {
-        $('.ir-arriba').slideUp(300);
+        $('.ir-arriba').fadeOut(300);
       }
     });
    
+  });
+
+  
+
+
   });
