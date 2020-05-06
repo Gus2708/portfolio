@@ -21,54 +21,48 @@ body{
     display:none;
 	background: linear-gradient(45deg, #7353ba 0%, #009fb7 38%, #2BFF88 97%);
 	font-size: 15px;
-	color:#fff;
+    color:#fff;
+    padding: 0;
 	cursor:pointer;
-	position: fixed;
+    position: fixed;
 	bottom:20px;
     right:20px;
     border-radius: 50%;
-    box-shadow: -1px 2px 7px #2d31427c;
+    box-shadow: 2px 2px 5px .5px  #00000052;
+    transition: box-shadow ease .3s;
+}
+
+.ir-arriba:hover{
+    box-shadow: 2.5px 2.5px 5px 1.5px  #00000052;
+    transition: box-shadow ease .3s;
 }
 
 .ir-arriba .fa-chevron-up{
     padding:15px 15px;
 }
 
-.ir-arriba .fa-chevron-up:hover{
-    animation: bajar-subir .6s ease infinite;
-
-}
-
-    @keyframes bajar-subir{
-        0%{transform: translateY(0px);}
-        15%{transform: translateY(-2.5px);}
-        30%{transform: translateY(-5px);}
-        45%{transform: translateY(-2.5px);}
-        60%{transform: translateY(0px);}
-        75%{transform: translateY(2.5px);}
-        85%{transform: translateY(5px);}
-        95%{transform: translateY(2.5px);}
-        100%{transform: translateY(0px);}
-    }
 
 /* Header */
 
 header{
-    background-color: #7353ba;
+    /*background-color: #7353ba;
     background: linear-gradient(45deg, #7353ba 0%, #009fb7 38%, #2BFF88 97%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 600% 100%;
-    max-height: 600px;
-    animation: gradient 35s linear infinite;
-    animation-direction: alternate;
+    animation: gradient 35s linear infinite;*/
+    background: url('../img/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    /*animation-direction: alternate;*/
     border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
-@keyframes gradient {
+
+/*@keyframes gradient {
     0% {background-position: 0%}
     50%{background-position: 50%;}
     100% {background-position: 100%}
-}
+}*/
 
 header .menu{
     margin: 40px 0;
@@ -82,6 +76,7 @@ header .menu a{
     text-decoration: none;
     border-bottom: 2px solid transparent;
     font-size: 1em;
+    opacity: 0;
     color: #f4f4f8;
 }
 
@@ -94,16 +89,21 @@ header .menu a:hover{
 header .contenedor-texto{
     display: flex;
     margin: 190px 0;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
+    top: 500px;
     
 }
 
 header .contenedor-texto .texto{
-    border: 2px solid #f4f4f880;
+    border-left: 4px solid #f4f4f880;
+    border-radius: 2px;
     display: inline-block;
+    position: relative;
+    left: -100px;
+    opacity: 0;
     text-align: center;
-    padding: 20px 60px;
+    padding: 10px 60px;
 
 }
 
@@ -114,7 +114,9 @@ header .contenedor-texto .texto h1{
 header .contenedor-texto .texto h1,
 header .contenedor-texto .texto h2{
     color: #f4f4f8;
-    font-weight: 300;
+    font-weight: 400;
+    position: relative;
+    left: -80px;
 }
 
 header .contenedor-texto .texto .nombre{
@@ -126,6 +128,8 @@ header .contenedor-texto .texto .nombre{
 header .contenedor-texto .texto .profesion{
     font-size: 25px;
     line-height: 25px;
+    text-align: left;
+    padding-left: 5px;
 }
 
 
@@ -556,3 +560,4 @@ footer .redes-sociales .container{
     }
 
 }
+
