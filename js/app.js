@@ -1,4 +1,10 @@
-$(document).ready(function(){
+$(document ).ready(function(){
+  /*preloader*/ 
+
+  $(window).ready(function(){
+    $('.lds-ripple .loader-nombre').fadeOut();
+    $('#loader-wrapper').delay(1000).fadeOut('slow');
+  });
 
   $('.menu a').each(function(index, elemento){
     $(this).css({
@@ -64,6 +70,5 @@ $('.ancla').on('click', function(e){
   });
 
   
-
 
   });
