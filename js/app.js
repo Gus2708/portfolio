@@ -1,7 +1,7 @@
 $(document ).ready(function(){
   /*preloader*/ 
 
-  $(window).ready(function(){
+  $(window).on('load', function(){
     $('.lds-ripple .loader-nombre').fadeOut();
     $('#loader-wrapper').delay(1000).fadeOut('slow');
   });
@@ -24,7 +24,7 @@ $(document ).ready(function(){
           left: '0'
       }, 1999, function(){
         
-      } );
+      });
 
 
 
@@ -68,7 +68,4 @@ $('.ancla').on('click', function(e){
     });
    
   });
-
-  
-
-  });
+});
